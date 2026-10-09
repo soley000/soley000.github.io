@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rosette-Michèle Otounga, Data & AI Engineer</title>
+<meta name="description" content="Data & AI Engineer. Complex data turned into reliable solutions, from collection to decision.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://soley000.github.io/">
+<meta property="og:title" content="Rosette-Michèle Otounga, Data & AI Engineer">
+<meta property="og:description" content="Complex data turned into reliable solutions, from collection to decision.">
+<meta property="og:image" content="https://soley000.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23663333'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%23E8C3BE'%3ERO%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --burgundy:#663333; --terra:#C46A4A; --rose:#E8C3BE; --rose-soft:#F6E7E4;
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#2A1F1F; --muted:#6E5C5A; --line:#E6CFCA;
+  --accent:#663333; --on-accent:#FFFFFF; --chip:var(--rose-soft);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1E1414; --surface:#281B1B; --ink:#F6EDEB; --muted:#C9B3AF; --line:#3D2A2A;
+    --accent:#E8C3BE; --on-accent:#3A1E1E; --chip:#3A2626; --rose-soft:#3A2626;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1E1414; --surface:#281B1B; --ink:#F6EDEB; --muted:#C9B3AF; --line:#3D2A2A;
+  --accent:#E8C3BE; --on-accent:#3A1E1E; --chip:#3A2626; --rose-soft:#3A2626;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,sans-serif;line-height:1.1;margin:0}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:24px;height:62px}
+.brand{font-family:"Bricolage Grotesque";font-weight:700;text-decoration:none;color:var(--accent);margin-right:auto}
+nav a.nl{text-decoration:none;color:var(--muted);font-weight:500;font-size:15px}
+nav a.nl:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:16px}
+@media (max-width:640px){nav a.nl{display:none}}
+
+/* hero */
+.hero{padding:88px 0 56px}
+.hero h1{font-size:clamp(46px,8vw,104px);font-weight:800;letter-spacing:-.03em;color:var(--accent)}
+.hero h1 span{display:block;color:var(--accent)}
+.role{font-size:clamp(18px,2.2vw,22px);font-weight:600;margin:24px 0 10px;color:var(--accent)}
+.lede{max-width:62ch;color:var(--muted);font-size:19px;margin:0}
+.proof{display:flex;flex-wrap:wrap;gap:10px;margin:32px 0 0;padding:0;list-style:none}
+.proof li{background:var(--chip);border-radius:999px;padding:8px 16px;font-size:15px}
+.proof b{color:var(--accent);font-family:"Bricolage Grotesque";font-weight:700;font-size:17px;margin-right:4px}
+.cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:12px;border:1.5px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.ghost{color:var(--accent)}
+.btn:hover{filter:brightness(1.08)}
+
+section{padding:72px 0;border-top:1px solid var(--line)}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.sh h2{font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-.02em;color:var(--accent)}
+.sh p{margin:0;color:var(--muted);max-width:52ch}
+
+/* featured */
+.feat{background:var(--rose-soft);border-radius:28px;padding:40px;display:grid;gap:28px}
+.feat h3{font-size:clamp(26px,3.4vw,38px);font-weight:700;color:var(--accent)}
+.feat p{margin:0;max-width:68ch;color:var(--ink)}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{background:var(--surface);border-radius:14px;padding:14px 12px;position:relative;counter-increment:s}
+.steps li::before{content:counter(s);font-family:"Bricolage Grotesque";font-weight:700;font-size:13px;color:var(--accent);opacity:.6}
+.steps li b{display:block;font-family:"Bricolage Grotesque";font-size:16px;color:var(--accent);margin:2px 0 4px}
+.steps li span{font-size:13.5px;color:var(--muted);line-height:1.4;display:block}
+.steps li:last-child{background:var(--accent)}
+.steps li:last-child b,.steps li:last-child span,.steps li:last-child::before{color:var(--on-accent)}
+.feat .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.feat .kpi{background:var(--surface);border-radius:16px;padding:16px}
+.feat .kpi b{display:block;font-family:"Bricolage Grotesque";font-size:28px;color:var(--accent)}
+.feat .kpi span{font-size:14px;color:var(--muted)}
+.decisions{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:0;padding:0;list-style:none}
+.decisions li{border:1.5px solid var(--rose);border-radius:12px;padding:12px 14px;font-size:15px;color:var(--muted)}
+.decisions li strong{display:block;color:var(--accent);font-weight:600}
+@media (max-width:900px){.steps{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:720px){.feat{padding:22px}.feat .kpis{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
+
+/* filters & cards */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.filters button,.chip{font:inherit;font-size:15px;border:1.5px solid var(--rose);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 15px;cursor:pointer}
+.filters button[aria-pressed="true"],.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.active-skill{min-height:26px;color:var(--muted);font-size:15px;margin-bottom:16px}
+.active-skill button{font:inherit;background:none;border:0;color:var(--terra);cursor:pointer;text-decoration:underline;padding:0 0 0 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card[hidden]{display:none}
+.vig{height:132px;padding:20px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;background:var(--rose-soft)}
+.vig.t{background:color-mix(in srgb,var(--rose) 55%,var(--bg))}
+.vig svg{width:46px;height:46px;stroke:var(--accent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none;align-self:flex-start}
+.vig .stat{text-align:right}
+.vig .stat b{display:block;font-family:"Bricolage Grotesque";font-weight:800;font-size:30px;line-height:1;color:var(--accent)}
+.vig .stat span{font-size:13px;color:var(--muted)}
+.card .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:20px;font-weight:700;color:var(--accent)}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:6px;gap:8px}
+.badge{font-size:13px;font-weight:600;border-radius:999px;padding:3px 10px;background:var(--chip);color:var(--accent)}
+.badge.personal{background:transparent;border:1.5px solid var(--terra);color:var(--terra)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 8px}
+.read{font-size:14px;font-weight:600;color:var(--accent)}
+
+/* skills */
+.skillgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px 36px}
+.skillgroups h3{font-size:18px;font-weight:700;margin-bottom:12px;color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip.proven::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:7px;vertical-align:1px}
+.chip.proven[aria-pressed="true"]::before{background:var(--on-accent)}
+span.chip{cursor:default;color:var(--muted)}
+.hint{color:var(--muted);font-size:15px;margin:0 0 24px}
+
+/* approach */
+.xp{display:grid;grid-template-columns:220px 1fr;gap:8px 40px;padding:28px 0;border-top:1px solid var(--line)}
+.xp:first-of-type{border-top:0;padding-top:0}
+.xp .when{color:var(--muted);font-size:15px}
+.xp .org{font-family:"Bricolage Grotesque";font-weight:700;color:var(--accent);font-size:15px;margin-top:4px}
+.xp h3{font-size:22px;color:var(--accent);margin-bottom:6px}
+.xp p{margin:0 0 10px;color:var(--muted);max-width:66ch}
+.xp ul{margin:0;padding-left:18px;color:var(--ink)}
+.xp li{margin:4px 0}
+@media (max-width:720px){.xp{grid-template-columns:1fr}}
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.principles div{border-left:3px solid var(--accent);padding:4px 0 4px 18px}
+.principles h3{font-size:20px;margin-bottom:6px;color:var(--accent)}
+.principles p{margin:0;color:var(--muted)}
+
+footer{padding:72px 0 56px;border-top:1px solid var(--line)}
+footer h2{font-size:clamp(30px,4vw,44px);margin-bottom:12px;color:var(--accent)}
+footer p{color:var(--muted);margin:0 0 24px;max-width:56ch}
+.small{color:var(--muted);font-size:14px;margin-top:48px}
+
+/* language switch */
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{font:600 13px Figtree,sans-serif;background:none;border:0;color:var(--muted);padding:8px 11px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.hook{font-family:"Bricolage Grotesque";font-weight:500;font-size:clamp(20px,2.4vw,26px);color:var(--accent);max-width:40ch;margin:28px 0 0;padding-left:18px;border-left:3px solid var(--rose)}
+
+/* cards are buttons now */
+button.card{font:inherit;color:inherit;text-align:left;padding:0;cursor:pointer;width:100%}
+
+/* detail panel */
+dialog#detail{border:0;padding:0;margin:0 0 0 auto;height:100%;max-height:100%;width:min(560px,100%);background:var(--bg);color:var(--ink);box-shadow:-24px 0 60px rgba(102,51,51,.18)}
+dialog#detail::backdrop{background:rgba(42,31,31,.35)}
+dialog#detail[open]{animation:slide .28s ease-out}
+@keyframes slide{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+.dhead{background:var(--rose-soft);padding:28px 28px 24px;position:relative}
+.dhead svg{width:40px;height:40px;stroke:var(--accent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dhead h2{font-size:28px;color:var(--accent);margin:14px 0 10px;padding-right:40px}
+.dclose{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;border:1px solid var(--rose);background:var(--surface);color:var(--accent);font-size:20px;cursor:pointer}
+.dbody{padding:24px 28px 40px}
+.dstat{display:flex;align-items:baseline;gap:10px;margin-bottom:22px}
+.dstat b{font-family:"Bricolage Grotesque";font-weight:800;font-size:40px;color:var(--accent);line-height:1}
+.dstat span{color:var(--muted)}
+.dblock{margin:0 0 20px}
+.dblock h3{font-size:15px;color:var(--accent);margin-bottom:6px;font-weight:700}
+.dblock p{margin:0}
+.dskills{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 28px}
+.dskills span{font-size:13px;border:1px solid var(--rose);border-radius:999px;padding:3px 10px;color:var(--muted)}
+.dnav{display:flex;justify-content:space-between;gap:10px;margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
+.dnav button{font:600 14px Figtree,sans-serif;background:none;border:0;color:var(--accent);cursor:pointer;padding:6px 0}
+@media (max-width:640px){dialog#detail{width:100%;max-width:100%;margin:0}.dhead,.dbody{padding-left:18px;padding-right:18px}}
+
+.hero h1{font-size:clamp(38px,5.6vw,68px)!important;letter-spacing:-.02em}
+.hero h1 span{display:inline!important}
+.proof li{color:var(--accent);font-weight:500}
+.vig{align-items:flex-end}
+.vig .label{font-family:"Bricolage Grotesque";font-weight:700;font-size:18px;color:var(--accent);text-align:right;max-width:60%;line-height:1.2}
+.dkind{color:var(--muted);margin:0 0 22px;font-style:italic}
+.xp .where{color:var(--muted);font-size:14px}
+.edu{display:grid;grid-template-columns:220px 1fr;gap:4px 40px;padding:16px 0;border-top:1px solid var(--line)}
+.edu:first-child{border-top:0}
+.edu h3{font-size:19px;color:var(--accent)}
+.edu p{margin:2px 0 0;color:var(--muted)}
+.interests{margin-top:48px}
+.interests h3{font-size:18px;color:var(--accent);margin-bottom:12px}
+@media (max-width:720px){.edu{grid-template-columns:1fr}}
+
+.hero h1{font-size:clamp(40px,6vw,76px)!important;color:var(--accent)}
+.hname{font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(22px,2.6vw,30px);color:var(--ink);margin:14px 0 0}
+.tagline{font-size:clamp(18px,2vw,22px);font-weight:500;color:var(--muted);margin:22px 0 0;max-width:52ch}
+</style>
+</head>
+<body>
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">R-M. Otounga</a>
+    <a class="nl" href="#work" data-i18n="nav_work"></a>
+    <a class="nl" href="#experience" data-i18n="nav_exp"></a>
+    <a class="nl" href="#contact" data-i18n="nav_contact"></a>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en" aria-pressed="false">EN</button>
+      <button data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+    <button id="theme" aria-label="Toggle dark mode">◐</button>
+  </div>
+</nav>
+
+<main id="top">
+<header class="hero wrap">
+  <h1 data-i18n="role"></h1>
+  <p class="hname">Rosette-Michèle Otounga</p>
+  <p class="tagline" data-i18n="tagline"></p>
+  <ul class="proof" aria-label="Focus areas">
+    <li data-i18n="p1"></li><li data-i18n="p2"></li><li data-i18n="p3"></li><li data-i18n="p4"></li>
+  </ul>
+  <div class="cta">
+    <a class="btn primary" href="#work" data-i18n="cta_work"></a>
+    <a class="btn ghost" href="https://github.com/soley000/omr-portfolio" data-i18n="cta_gh"></a>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sh"><h2 data-i18n="feat_h"></h2><p data-i18n="feat_sub"></p></div>
+    <article class="feat">
+      <div>
+        <h3 data-i18n="feat_title"></h3>
+        <p style="margin-top:14px" data-i18n="feat_text"></p>
+      </div>
+      <ol class="steps" aria-label="End to end">
+        <li><b data-i18n="s1"></b><span data-i18n="s1d"></span></li>
+        <li><b data-i18n="s2"></b><span data-i18n="s2d"></span></li>
+        <li><b data-i18n="s3"></b><span data-i18n="s3d"></span></li>
+        <li><b data-i18n="s4"></b><span data-i18n="s4d"></span></li>
+        <li><b data-i18n="s5"></b><span data-i18n="s5d"></span></li>
+        <li><b data-i18n="s6"></b><span data-i18n="s6d"></span></li>
+      </ol>
+      <ul class="decisions">
+        <li><strong data-i18n="d1"></strong><span data-i18n="d1d"></span></li>
+        <li><strong data-i18n="d2"></strong><span data-i18n="d2d"></span></li>
+        <li><strong data-i18n="d3"></strong><span data-i18n="d3d"></span></li>
+        <li><strong data-i18n="d4"></strong><span data-i18n="d4d"></span></li>
+      </ul>
+      <div><button class="btn primary" data-open="wm" data-i18n="feat_cta" style="font:inherit;font-weight:600;cursor:pointer"></button></div>
+    </article>
+  </div>
+</section>
+
+<section aria-labelledby="all-projects">
+  <div class="wrap">
+    <div class="sh"><h2 id="all-projects" data-i18n="proj_h"></h2><p data-i18n="proj_sub"></p></div>
+    <div class="filters" role="group" aria-label="Filter">
+      <button aria-pressed="true" data-domain="all" data-i18n="f_all"></button>
+      <button aria-pressed="false" data-domain="de">Data Engineering</button>
+      <button aria-pressed="false" data-domain="cv">Computer Vision</button>
+      <button aria-pressed="false" data-domain="genai" data-i18n="f_genai"></button>
+      <button aria-pressed="false" data-domain="ml">Machine Learning</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sh"><h2 data-i18n="exp_h"></h2><p data-i18n="exp_sub"></p></div>
+    <div id="xpList"></div>
+    <div class="sh" style="margin-top:56px"><h2 data-i18n="edu_h"></h2></div>
+    <div id="eduList"></div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="sh"><h2 data-i18n="ap_h"></h2></div>
+    <div class="principles">
+      <div><h3 data-i18n="ap1"></h3><p data-i18n="ap1d"></p></div>
+      <div><h3 data-i18n="ap2"></h3><p data-i18n="ap2d"></p></div>
+      <div><h3 data-i18n="ap3"></h3><p data-i18n="ap3d"></p></div>
+      <div><h3 data-i18n="ap4"></h3><p data-i18n="ap4d"></p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2 data-i18n="ct_h"></h2>
+    <p data-i18n="ct_sub"></p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:orosettemichele@gmail.com" data-i18n="ct_mail"></a>
+      <a class="btn ghost" href="https://linkedin.com/in/rosette-michele">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/soley000">GitHub</a>
+    </div>
+    <p class="small">© Rosette-Michèle Otounga</p>
+  </div>
+</footer>
+
+<dialog id="detail" aria-labelledby="dTitle">
+  <div class="dhead">
+    <button class="dclose" id="dClose" aria-label="Close">×</button>
+    <svg viewBox="0 0 48 48" id="dIcon" aria-hidden="true"></svg>
+    <h2 id="dTitle"></h2>
+    <span class="badge" id="dBadge"></span>
+  </div>
+  <div class="dbody">
+    <p class="dkind" id="dStatL"></p>
+    <div class="dblock"><h3 data-i18n="dl_problem"></h3><p id="dProblem"></p></div>
+    <div class="dblock"><h3 data-i18n="dl_approach"></h3><p id="dApproach"></p></div>
+    <div class="dblock"><h3 data-i18n="dl_result"></h3><p id="dResult"></p></div>
+    <div class="dblock"><h3 data-i18n="dl_skills"></h3></div>
+    <div class="dskills" id="dSkills"></div>
+    <a class="btn primary" id="dLink" data-i18n="dl_read"></a>
+    <div class="dnav"><button id="dPrev"></button><button id="dNext"></button></div>
+  </div>
+</dialog>
+
+<script>
+const BASE="https://github.com/soley000/omr-portfolio/tree/main/projects/";
+const ICON={
+ bars:'<path d="M4 40V24M14 40V14M24 40V28M34 40V8M42 40H2"/>',
+ eye:'<path d="M3 24s8-12 21-12 21 12 21 12-8 12-21 12S3 24 3 24z"/><circle cx="24" cy="24" r="5"/><path d="M8 42h14M8 6h20"/>',
+ grid:'<rect x="5" y="5" width="16" height="16" rx="3"/><rect x="27" y="5" width="16" height="16" rx="3"/><rect x="5" y="27" width="16" height="16" rx="3"/><path d="M31 35l4 4 7-8"/>',
+ box:'<path d="M4 12V4h8M36 4h8v8M44 36v8h-8M12 44H4v-8"/><rect x="14" y="14" width="20" height="20" rx="2"/>',
+ bolt:'<path d="M27 3L9 27h14l-2 18 18-24H25z"/>',
+ table:'<rect x="4" y="7" width="40" height="34" rx="3"/><path d="M4 18h40M4 29h40M18 7v34"/>',
+ leaf:'<path d="M8 40C8 18 22 7 42 6c0 22-12 34-30 34z"/><path d="M8 40l18-18"/>',
+ house:'<path d="M5 22L24 6l19 16"/><path d="M10 18v24h28V18"/><path d="M20 42V30h8v12"/>'
+};
+
+const T={
+en:{
+ edu_h:"Education",int_h:"Interests",
+ nav_work:"Work",nav_exp:"Experience",nav_skills:"Skills",nav_contact:"Contact",
+ role:"Data &amp; AI Engineer",tagline:"Complex data turned into reliable solutions, from collection to decision.",
+ lede:"Industrial background in the automotive sector: electric vehicle data, driving-scene analysis, vision and generative models.",
+ p1:"Data Engineering",p2:"Machine Learning",p3:"Computer Vision",p4:"Generative AI evaluation",
+ cta_work:"See the work",cta_gh:"GitHub portfolio",
+ feat_h:"Featured project",feat_sub:"From a need spotted in the field to a deployed evaluation platform.",
+ feat_title:"WM Benchmark: evaluating generative world models for autonomous driving",
+ feat_text:"Every world-model evaluation used to live in its own files, with its own metrics. The missing tool, built end to end: GPU inference, video metrics, one central database, an automatic quality classifier and a web application, so teams can compare models and decide quickly which ones to pursue.",
+ s1:"Need",s1d:"Scattered results, no common protocol",s2:"Investigate",s2d:"VaViM and Cosmos on a GPU server",s3:"Measure",s3d:"Fidelity, perception, temporal, cost",
+ s4:"Centralize",s4d:"One model-agnostic database",s5:"Classify",s5d:"Automatic quality labels",s6:"Deliver",s6d:"Web app deployed in the cloud",
+ k1:"inference runs on a GH200 GPU server",k2:"metrics in one PostgreSQL database",k3:"accuracy and F1, after removing a circular bias",k4:"insufficient runs mistaken for sufficient ones",
+ d1:"Is this run usable?",d1d:"Labeled automatically on upload",d2:"Which model for which use?",d2d:"Ranked side by side in a dashboard",
+ d3:"Is a bigger model worth it?",d3d:"Fidelity versus GPU memory",d4:"Worth launching?",d4d:"Quality and cost predicted beforehand",
+ feat_cta:"Open the project",
+ proj_h:"All projects",proj_sub:"Each project opens on the problem, the approach and the result.",
+ f_all:"All",f_genai:"GenAI &amp; Evaluation",
+ showing:"Showing projects that use",show_all:"Show all",
+ exp_h:"Experience",exp_sub:"Data and AI work in industrial settings.",
+ xp1_when:"Sept 2024 – Sept 2026",xp1_title:"Big Data Engineer: AI Emerging Technologies, Assisted Driving",
+ xp1_text:"Research and innovation team working on generative models, driving-scene evaluation and AI benchmarking for driver-assistance systems.",
+ xp1_a:"Designed and deployed WM Benchmark, an end-to-end evaluation platform for generative world models.",
+ xp1_b:"Built an automated pipeline detecting hallucinations in AI-generated driving descriptions.",
+ xp1_c:"Engineered electric vehicle telemetry into anonymized indicators for an energy partner.",
+ xp1_d:"Created annotated datasets through image extraction and open-vocabulary object detection.",
+ sk_h:"Skills, linked to proof",sk_sub:"Click a skill to see the projects that use it.",
+ sk_hint:"Every skill below is demonstrated in at least one published project.",
+ ap_h:"Working principles",
+ ap1:"Start from a real problem",ap1d:"Every project answers a concrete question, not a technology chosen for its own sake.",
+ ap2:"Measure honestly",ap2d:"A score that looks too good gets investigated. Limitations are documented, not hidden.",
+ ap3:"Build end to end",ap3d:"From data to a usable tool, because a result nobody can use has no value.",
+ ap4:"Respect confidentiality",ap4d:"Industrial work is shared through method, architecture and results, never internal code or data.",
+ ct_h:"Let's talk",ct_sub:"Data engineering, machine learning, applied AI, or a problem that needs all three.",ct_mail:"Send an email",
+ dl_problem:"Problem",dl_approach:"Approach",dl_result:"Result",dl_skills:"Skills",dl_read:"Read the full case study on GitHub",
+ prev:"← Previous",next:"Next →",read:"Details →",industrial:"Industrial",personal:"Open source",
+ g_prog:"Programming &amp; Data",g_de:"Data Engineering",g_ml:"Machine Learning",g_cv:"Computer Vision &amp; Multimodal",g_gen:"Generative AI &amp; Evaluation",g_cloud:"Cloud, Apps &amp; Practice",g_other:"Other"
+},
+fr:{
+ edu_h:"Formation",int_h:"Centres d'intérêt",
+ nav_work:"Projets",nav_exp:"Expérience",nav_skills:"Compétences",nav_contact:"Contact",
+ role:"Ingénieure Data &amp; IA",tagline:"Des données complexes transformées en solutions fiables, de la collecte jusqu'à la décision.",
+ lede:"Expérience industrielle dans l'automobile : données de véhicules électriques, analyse de scènes de conduite, modèles de vision et génératifs.",
+ p1:"Data Engineering",p2:"Machine Learning",p3:"Computer Vision",p4:"Évaluation d'IA générative",
+ cta_work:"Voir les projets",cta_gh:"Portfolio GitHub",
+ feat_h:"Projet phare",feat_sub:"D'un besoin repéré sur le terrain à une plateforme d'évaluation déployée.",
+ feat_title:"WM Benchmark : évaluer les world models génératifs pour la conduite autonome",
+ feat_text:"Chaque évaluation de world model vivait dans ses propres fichiers, avec ses propres métriques. L'outil manquant, construit de bout en bout : inférence GPU, métriques vidéo, une base de données centrale, un classifieur qualité automatique et une application web, pour que l'équipe compare les modèles et décide vite lesquels poursuivre.",
+ s1:"Besoin",s1d:"Résultats dispersés, aucun protocole commun",s2:"Investiguer",s2d:"VaViM et Cosmos sur un serveur GPU",s3:"Mesurer",s3d:"Fidélité, perception, temporalité, coût",
+ s4:"Centraliser",s4d:"Une base agnostique au modèle",s5:"Classifier",s5d:"Labels qualité automatiques",s6:"Livrer",s6d:"Application web déployée dans le cloud",
+ k1:"runs d'inférence sur un serveur GPU GH200",k2:"métriques dans une base PostgreSQL",k3:"d'accuracy et de F1, après correction d'un biais circulaire",k4:"run insuffisant pris pour un run suffisant",
+ d1:"Ce run est-il exploitable ?",d1d:"Label attribué automatiquement à l'import",d2:"Quel modèle pour quel usage ?",d2d:"Classement côte à côte dans un tableau de bord",
+ d3:"Un modèle plus gros vaut-il le coût ?",d3d:"Fidélité face à la mémoire GPU",d4:"Faut-il lancer ce run ?",d4d:"Qualité et coût estimés à l'avance",
+ feat_cta:"Ouvrir le projet",
+ proj_h:"Tous les projets",proj_sub:"Chaque projet s'ouvre sur le problème, l'approche et le résultat.",
+ f_all:"Tous",f_genai:"IA générative &amp; évaluation",
+ showing:"Projets qui utilisent",show_all:"Tout afficher",
+ exp_h:"Expérience",exp_sub:"Data et IA en contexte industriel.",
+ xp1_when:"Sept. 2024 – sept. 2026",xp1_title:"Big Data Engineer : AI Emerging Technologies, Assisted Driving",
+ xp1_text:"Équipe de recherche et d'innovation sur les modèles génératifs, l'évaluation de scènes de conduite et le benchmark de modèles IA pour l'aide à la conduite.",
+ xp1_a:"Conception et déploiement de WM Benchmark, une plateforme d'évaluation de world models génératifs de bout en bout.",
+ xp1_b:"Pipeline automatisé de détection d'hallucinations dans des descriptions de conduite générées par IA.",
+ xp1_c:"Transformation de télémétrie de véhicules électriques en indicateurs anonymisés pour un partenaire de l'énergie.",
+ xp1_d:"Création de datasets annotés par extraction d'images et détection d'objets à vocabulaire ouvert.",
+ sk_h:"Compétences, preuves à l'appui",sk_sub:"Clique sur une compétence pour voir les projets qui l'utilisent.",
+ sk_hint:"Chaque compétence ci-dessous est démontrée dans au moins un projet publié.",
+ ap_h:"Principes de travail",
+ ap1:"Partir d'un vrai problème",ap1d:"Chaque projet répond à une question concrète, pas à une technologie choisie pour elle-même.",
+ ap2:"Mesurer honnêtement",ap2d:"Un score trop beau est examiné. Les limites sont documentées, pas cachées.",
+ ap3:"Construire de bout en bout",ap3d:"De la donnée à un outil utilisable, parce qu'un résultat que personne ne peut utiliser n'a pas de valeur.",
+ ap4:"Respecter la confidentialité",ap4d:"Les projets industriels sont présentés par leur méthode, leur architecture et leurs résultats, jamais par du code ou des données internes.",
+ ct_h:"Échangeons",ct_sub:"Data engineering, machine learning, IA appliquée, ou un problème qui demande les trois.",ct_mail:"Envoyer un e-mail",
+ dl_problem:"Problème",dl_approach:"Approche",dl_result:"Résultat",dl_skills:"Compétences",dl_read:"Lire l'étude complète sur GitHub",
+ prev:"← Précédent",next:"Suivant →",read:"Détails →",industrial:"Industriel",personal:"Open source",
+ g_prog:"Programmation &amp; données",g_de:"Data Engineering",g_ml:"Machine Learning",g_cv:"Vision &amp; multimodal",g_gen:"IA générative &amp; évaluation",g_cloud:"Cloud, applis &amp; pratiques",g_other:"Autres"
+}};
+
+const projects=[
+ {id:"wm",icon:"bars",stat:"94.83%",domains:["genai","cv","ml","de"],kind:"industrial",path:"applied-ai-computer-vision/wm-benchmark",
+  skills:["Python","PostgreSQL","SQL","Data Modeling","Data Pipelines","Docker","FastAPI","scikit-learn","Supervised Learning","Cross-Validation","Model Evaluation","Model Deployment","PyTorch","OpenCV","NumPy","Video Quality Metrics","World Models","Prompt Engineering","Hallucination Detection","Benchmarking","Data Visualization","Agile / Scrum"],
+  en:{title:"WM Benchmark",statL:"Evaluation platform",desc:"End-to-end benchmarking platform for generative world models: inference, metrics, database, classifier, web app.",
+   problem:"World-model evaluations were run one by one, each with its own scripts, metrics and file format: results could not be compared over time or used to decide.",
+   approach:"Ran 379 inference runs on VaViM and Cosmos on a GPU server, computed video metrics, designed a model-agnostic PostgreSQL database, trained a quality classifier and built a deployed web application to compare and predict results.",
+   result:"381 runs and 4,753 metrics centralized; 94.83% accuracy and F1 after removing a circular labeling bias, with no insufficient run ever mistaken for a sufficient one."},
+  fr:{title:"WM Benchmark",statL:"Plateforme d'évaluation",desc:"Plateforme de benchmark de world models génératifs de bout en bout : inférence, métriques, base, classifieur, appli web.",
+   problem:"Les évaluations de world models étaient menées une par une, chacune avec ses scripts, ses métriques et son format : impossible de comparer dans le temps ou de décider.",
+   approach:"379 runs d'inférence sur VaViM et Cosmos sur serveur GPU, calcul de métriques vidéo, base PostgreSQL agnostique au modèle, classifieur qualité et application web déployée pour comparer et prédire.",
+   result:"381 runs et 4 753 métriques centralisés ; 94,83 % d'accuracy et de F1 après correction d'un biais circulaire, sans jamais confondre un run insuffisant avec un run suffisant."}},
+ {id:"vle",icon:"eye",stat:"155",domains:["genai","cv"],kind:"industrial",path:"applied-ai-computer-vision/vision-llm-evaluation",
+  skills:["Python","LLMs","Hallucination Detection","Model Evaluation","Multimodal AI","Benchmarking"],
+  en:{title:"Vision & LLM Evaluation Framework",statL:"Hallucination detection",desc:"Pipeline that detects hallucinated objects in AI-generated driving-coaching text by cross-checking it against video frames.",
+   problem:"A driving-coaching model may mention objects that are not actually visible in the video.",
+   approach:"Designed a pipeline: an LLM extracts the objects mentioned in the text, a vision model detects the objects in the frames, both are normalized across French and English, then compared to flag hallucinations.",
+   result:"70% accuracy but 15% precision and 27% recall on the first version: a clear diagnosis of what to improve next, with per-video reports and aggregate metrics."},
+  fr:{title:"Évaluation Vision & LLM",statL:"Détection d'hallucinations",desc:"Pipeline qui détecte les objets hallucinés dans des conseils de conduite générés par IA, en les confrontant aux images.",
+   problem:"Un modèle de coaching de conduite peut mentionner des objets absents de la vidéo.",
+   approach:"Conception d'un pipeline : un LLM extrait les objets cités dans le texte, un modèle de vision détecte ceux des images, les deux sont normalisés FR/EN puis comparés pour repérer les hallucinations.",
+   result:"70 % d'accuracy mais 15 % de précision et 27 % de rappel sur la première version : un diagnostic clair de ce qu'il faut améliorer, avec rapports par vidéo et métriques globales."}},
+ {id:"cos",icon:"grid",stat:"7",domains:["genai","cv"],kind:"industrial",path:"applied-ai-computer-vision/cosmos-vlm-exploration",
+  skills:["Vision-Language Models","Transformers","Model Evaluation","Benchmarking","Multimodal AI"],
+  en:{title:"Vision-Language Models Exploration",statL:"Vision-language models",desc:"Evaluation spike of NVIDIA Cosmos Reason models on driving scenarios, with a seven-criterion scoring grid.",
+   problem:"Can recent vision-language models describe driving scenes, spot critical road users and identify risks from video?",
+   approach:"Evaluation spike following NVIDIA's reference implementation on 8 urban scenarios, with outputs scored on a seven-criterion grid and the integration effort of each step measured.",
+   result:"Objects identified reliably with no hallucination, but weak temporal reasoning and about 72 seconds per inference."},
+  fr:{title:"Exploration de modèles vision-langage",statL:"Modèles vision-langage",desc:"Spike d'évaluation des modèles NVIDIA Cosmos Reason sur des scénarios de conduite, avec une grille à sept critères.",
+   problem:"Les modèles vision-langage récents savent-ils décrire une scène de conduite, repérer les usagers critiques et les risques ?",
+   approach:"Spike d'évaluation suivant l'implémentation de référence NVIDIA sur 8 scénarios urbains, sorties notées sur une grille à sept critères et effort d'intégration mesuré à chaque étape.",
+   result:"Objets bien identifiés, sans hallucination, mais un raisonnement temporel faible et environ 72 secondes par inférence."}},
+ {id:"od",icon:"box",stat:"3",domains:["cv"],kind:"personal",path:"applied-ai-computer-vision/object-detection",
+  skills:["Python","YOLO","DETR","OWL-ViT","Object Detection","OpenCV","Transformers","PyTorch","Streamlit","Git"],
+  en:{title:"Object Detection: YOLOv8, DETR & OWL-ViT",statL:"Detection paradigms",desc:"Three detection paradigms compared on the same image, with an app to run them alone or side by side.",
+   problem:"How do CNN, Transformer and vision-language detectors trade off speed, coverage and flexibility?",
+   approach:"Compared YOLOv8n, DETR and OWL-ViT on the same scene and built a Streamlit app to run them alone or side by side, with metrics and downloadable annotated images.",
+   result:"YOLOv8n found 3 objects in 139 ms, DETR 9 objects in 1,592 ms, and OWL-ViT detects any object described in text, without retraining."},
+  fr:{title:"Détection d'objets : YOLOv8, DETR & OWL-ViT",statL:"Paradigmes de détection",desc:"Trois paradigmes de détection comparés sur une même image, avec une appli pour les lancer seuls ou côte à côte.",
+   problem:"Comment les détecteurs CNN, Transformer et vision-langage arbitrent-ils entre vitesse, couverture et flexibilité ?",
+   approach:"Comparaison de YOLOv8n, DETR et OWL-ViT sur une même scène, et application Streamlit pour les lancer seuls ou côte à côte, avec métriques et images annotées téléchargeables.",
+   result:"YOLOv8n trouve 3 objets en 139 ms, DETR 9 objets en 1 592 ms, et OWL-ViT détecte tout objet décrit en texte, sans réentraînement."}},
+ {id:"ev",icon:"bolt",stat:"GDPR",domains:["de"],kind:"industrial",path:"data-engineering/ev-charging-data-engineering",
+  skills:["SQL","GCP","Data Pipelines","ETL","Data Quality","Data Transformation","Data Anonymization"],
+  en:{title:"EV Charging Data Engineering",statL:"Telemetry to indicators",desc:"Raw EV telemetry turned into reconstructed charging sessions and anonymized indicators for an energy partner.",
+   problem:"Raw electric vehicle telemetry could not answer an energy partner's questions about charging behavior and its grid implications.",
+   approach:"Assessed data quality, cleaned and normalized the data, cross-joined driving and charging tables in SQL to reconstruct sessions, and translated each business question into an indicator.",
+   result:"Complete, verified charging sessions and aggregated, anonymized indicators, delivered under strict GDPR constraints."},
+  fr:{title:"Data engineering de recharge VE",statL:"De la télémétrie aux indicateurs",desc:"Télémétrie brute de véhicules électriques transformée en sessions de recharge et en indicateurs anonymisés pour un partenaire énergie.",
+   problem:"La télémétrie brute ne permettait pas de répondre aux questions d'un partenaire de l'énergie sur les usages de recharge.",
+   approach:"Évaluation de la qualité, nettoyage et normalisation, jointures SQL entre conduite et recharge pour reconstruire les sessions, puis un indicateur par question métier.",
+   result:"Sessions de recharge complètes et vérifiées, indicateurs agrégés et anonymisés, livrés dans le respect strict du RGPD."}},
+ {id:"ida",icon:"table",stat:"Multi",domains:["de"],kind:"industrial",path:"supporting/industrial-data-automation",
+  skills:["Data Quality","Data Transformation","Data Pipelines","ETL"],
+  en:{title:"Industrial Data Automation",statL:"Data standardization",desc:"Multi-country commercial data panels standardized and automated, with quality checks before database integration.",
+   problem:"Country correspondents sent commercial data in different formats, making database updates slow and error-prone.",
+   approach:"Designed a standardized Excel panel, wrote VBA macros for cleaning and consolidation, and added validation before integration into the statistics database.",
+   result:"Faster, more reliable multi-country updates, maintained over several years."},
+  fr:{title:"Automatisation de données industrielles",statL:"Standardisation des données",desc:"Panels commerciaux multi-pays standardisés et automatisés, avec contrôles qualité avant intégration en base.",
+   problem:"Les correspondants pays envoyaient leurs données dans des formats différents : mises à jour lentes et sources d'erreurs.",
+   approach:"Panel Excel standardisé, macros VBA de nettoyage et de consolidation, contrôles avant intégration dans la base statistique.",
+   result:"Des mises à jour multi-pays plus rapides et plus fiables, maintenues sur plusieurs années."}},
+ {id:"co2",icon:"leaf",stat:"2035",domains:["ml"],kind:"personal",path:"supporting/co2-ev-france",
+  skills:["Python","Pandas","NumPy","Time Series","scikit-learn","Model Evaluation","Streamlit","Data Visualization","Git"],
+  en:{title:"CO₂ Reduction: EV Adoption in France",statL:"Forecasting & impact",desc:"EV adoption forecast with Prophet after rejecting SVR, plus an app estimating individual and national CO₂ savings.",
+   problem:"How much CO₂ could switching to an electric vehicle save, for one driver and for France as a whole?",
+   approach:"Combined four public datasets, compared SVR and Prophet on 14 annual points, forecast adoption with logistic growth, and built a personalized Streamlit app.",
+   result:"EV share of new registrations projected to plateau around 2033–2035; SVR rejected because it extrapolated outside 0–100%."},
+  fr:{title:"Réduction de CO₂ : VE en France",statL:"Prévision & impact",desc:"Prévision de l'adoption des VE avec Prophet après rejet du SVR, et appli estimant le CO₂ évité, individuel et national.",
+   problem:"Combien de CO₂ le passage à l'électrique peut-il éviter, pour un conducteur et pour la France ?",
+   approach:"Quatre jeux de données publics, comparaison SVR / Prophet sur 14 points annuels, prévision en croissance logistique et application Streamlit personnalisée.",
+   result:"Part des VE dans les immatriculations neuves projetée en plateau vers 2033–2035 ; SVR écarté car il sortait de l'intervalle 0–100 %."}},
+ {id:"re",icon:"house",stat:"0.875",domains:["ml"],kind:"personal",path:"supporting/real-estate-price-prediction",
+  skills:["Python","Pandas","NumPy","scikit-learn","Feature Engineering","Supervised Learning","Model Evaluation","Model Deployment","Streamlit","Data Visualization","Git"],
+  en:{title:"Real Estate Price Prediction",statL:"Regression pipeline",desc:"Regression pipeline with feature engineering, model comparison, neighbourhood error analysis and a prediction app.",
+   problem:"Estimate residential sale prices from structured housing characteristics.",
+   approach:"Cleaning, feature engineering, comparison of three regressors, error analysis by neighbourhood, and a Streamlit app that reuses the saved model and preprocessing.",
+   result:"Gradient Boosting reached R² 0.875 and an MAE of about $14K on 280 validation properties."},
+  fr:{title:"Prédiction de prix immobiliers",statL:"Pipeline de régression",desc:"Pipeline de régression avec feature engineering, comparaison de modèles, analyse d'erreur par quartier et appli de prédiction.",
+   problem:"Estimer le prix de vente d'un logement à partir de ses caractéristiques.",
+   approach:"Nettoyage, feature engineering, comparaison de trois régresseurs, analyse d'erreur par quartier et application Streamlit qui réutilise le modèle et le prétraitement sauvegardés.",
+   result:"Le Gradient Boosting atteint un R² de 0,875 et une MAE d'environ 14 000 $ sur 280 logements de validation."}}
+];
+
+
+const XP=[
+ {org:"Ampere Software Technology",where:"Guyancourt",
+  en:{title:"Big Data Engineer (apprentice)",when:"Since Sept 2024",items:["Designed and deployed pipelines for large-scale electric vehicle data analysis.","Automated processing flows and structured datasets for AI use cases.","Integrated AI model APIs and developed Python automation scripts.","Benchmarked AI models (world models, computer vision, multimodal) on GCP virtual machines.","Created annotated datasets through image extraction and zero-shot object detection with OWL-ViT.","Wrote technical documentation and presented results to the teams."]},
+  fr:{title:"Big Data Engineer (apprentie)",when:"Depuis sept. 2024",items:["Conception et déploiement de pipelines pour l'analyse de données massives de véhicules électriques.","Automatisation des flux de traitement et structuration de datasets pour des cas d'usage IA.","Intégration d'APIs de modèles IA et développement de scripts Python d'automatisation.","Benchmark de modèles IA (world models, computer vision, multimodaux) sur VM GCP.","Création de datasets annotés : extraction d'images et détection d'objets zero-shot avec OWL-ViT.","Rédaction de documentation technique et restitution des résultats aux équipes."]}},
+ {org:"Renault Group",where:"Le Plessis-Robinson",
+  en:{title:"Database Manager (apprentice)",when:"Sept 2022 – Sept 2024",items:["Managed, maintained and made business databases more reliable.","Improved data quality through checks, consistency rules and updates.","Automated and optimized data processes."]},
+  fr:{title:"Gestionnaire base de données (apprentie)",when:"Sept. 2022 – sept. 2024",items:["Gestion, maintenance et fiabilisation de bases de données métiers.","Amélioration de la qualité des données : contrôles, cohérence, mises à jour.","Automatisation et optimisation des process data."]}},
+ {org:"Analyticsphere",where:"Paris",
+  en:{title:"Data Analytics Analyst (intern)",when:"Apr – Jun 2022",items:["Analyzed and visualized data with Oracle Analytics Cloud.","Built interactive decision-support dashboards."]},
+  fr:{title:"Chargée d'études Data Analytics (stagiaire)",when:"Avril – juin 2022",items:["Analyse et visualisation de données avec Oracle Analytics Cloud.","Création de tableaux de bord interactifs d'aide à la décision."]}}
+];
+const EDU=[
+ {school:"Nexa Digital School · Paris",en:{title:"Master's in Data & Artificial Intelligence: level 7 (RNCP 41813)",when:"2024 – 2026"},fr:{title:"Mastère Data & Intelligence Artificielle : niveau 7 (RNCP 41813)",when:"2024 – 2026"}},
+ {school:"IUT de Perpignan · Carcassonne",en:{title:"Bachelor of Technology in Data Science (BUT)",when:"2020 – 2024"},fr:{title:"BUT Science des Données",when:"2020 – 2024"}}
+];
+const INTERESTS={en:["Reading","Travel","Puzzles","Cultural discovery"],fr:["Lecture","Voyages","Puzzles","Découvertes culturelles"]};
+
+const groups=[
+ ["g_prog",["Python","SQL","Pandas","NumPy","PostgreSQL"]],
+ ["g_de",["Data Pipelines","ETL","Data Quality","Data Transformation","Data Modeling","Data Anonymization"]],
+ ["g_ml",["scikit-learn","Supervised Learning","Feature Engineering","Time Series","Cross-Validation","Model Evaluation","Model Deployment"]],
+ ["g_cv",["PyTorch","OpenCV","YOLO","DETR","OWL-ViT","Object Detection","Transformers","Vision-Language Models","Video Quality Metrics","Multimodal AI"]],
+ ["g_gen",["LLMs","World Models","Prompt Engineering","Hallucination Detection","Benchmarking"]],
+ ["g_cloud",["GCP","Docker","FastAPI","Streamlit","Git","Data Visualization","Agile / Scrum"]]
+];
+// any skill cited in a project but missing from the groups is added automatically
+const listed=new Set(groups.flatMap(g=>g[1]));
+const extra=[...new Set(projects.flatMap(p=>p.skills))].filter(s=>!listed.has(s));
+if(extra.length)groups.push(["g_other",extra]);
+
+let lang="en",domain="all",skill=null,current=null;
+const $=id=>document.getElementById(id);
+const tr=k=>T[lang][k]||k;
+const used=s=>projects.some(p=>p.skills.includes(s));
+
+function renderStatic(){
+ document.documentElement.lang=lang;
+ document.querySelectorAll("[data-i18n]").forEach(el=>el.innerHTML=tr(el.dataset.i18n));
+ document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===lang));
+ $("xpList").innerHTML=XP.map(x=>{const c=x[lang];return `<article class="xp"><div><div class="when">${c.when}</div><div class="org">${x.org}</div><div class="where">${x.where}</div></div><div><h3>${c.title}</h3><ul>${c.items.map(i=>`<li>${i}</li>`).join("")}</ul></div></article>`}).join("");
+ $("eduList").innerHTML=EDU.map(e=>{const c=e[lang];return `<div class="edu"><div class="when">${c.when}</div><div><h3>${c.title}</h3><p>${e.school}</p></div></div>`}).join("");
+ $("grid").innerHTML=projects.map((p,i)=>{const c=p[lang];return `
+ <button class="card" id="p-${p.id}" data-open="${p.id}" aria-haspopup="dialog">
+  <div class="vig ${i%2?"t":""}" aria-hidden="true"><svg viewBox="0 0 48 48">${ICON[p.icon]}</svg><div class="label">${c.statL}</div></div>
+  <div class="body">
+   <h3>${c.title}</h3><p>${c.desc}</p>
+   <div class="tags">${p.skills.slice(0,4).map(s=>`<span>${s}</span>`).join("")}</div>
+   <div class="meta"><span class="badge ${p.kind==="personal"?"personal":""}">${tr(p.kind)}</span><span class="read">${tr("read")}</span></div>
+  </div></button>`}).join("");
+ if($("skillgroups"))$("skillgroups").innerHTML=groups.map(([g,list])=>`<div><h3>${tr(g)}</h3><div class="chips">${
+  list.filter(used).map(s=>`<button class="chip proven" aria-pressed="false" data-skill="${s}">${s}</button>`).join("")}</div></div>`).join("");
+ document.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>openDetail(b.dataset.open));
+ document.querySelectorAll(".chip[data-skill]").forEach(b=>b.onclick=()=>{skill=skill===b.dataset.skill?null:b.dataset.skill;domain="all";filter();if(skill)$("all-projects").scrollIntoView()});
+ filter();
+ if(current&&$("detail").open)fillDetail(current);
+}
+function filter(){
+ projects.forEach(p=>{$("p-"+p.id).hidden=!((domain==="all"||p.domains.includes(domain))&&(!skill||p.skills.includes(skill)))});
+ document.querySelectorAll(".filters button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.domain===domain));
+ document.querySelectorAll(".chip[data-skill]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.skill===skill));
+ if($("skillState"))$("skillState").innerHTML=skill?`${tr("showing")} <b>${skill}</b>.<button id="clr">${tr("show_all")}</button>`:"";
+ if(skill&&$("clr"))$("clr").onclick=()=>{skill=null;filter()};
+}
+function fillDetail(id){
+ const i=projects.findIndex(p=>p.id===id),p=projects[i],c=p[lang];current=id;
+ $("dIcon").innerHTML=ICON[p.icon];$("dTitle").textContent=c.title;
+ $("dBadge").textContent=tr(p.kind);$("dBadge").className="badge "+(p.kind==="personal"?"personal":"");
+ $("dStatL").textContent=c.statL;
+ $("dProblem").textContent=c.problem;$("dApproach").textContent=c.approach;$("dResult").textContent=c.result;
+ $("dSkills").innerHTML=p.skills.map(s=>`<span>${s}</span>`).join("");
+ $("dLink").href=BASE+p.path;$("dLink").innerHTML=tr("dl_read");
+ const prev=projects[(i-1+projects.length)%projects.length],next=projects[(i+1)%projects.length];
+ $("dPrev").textContent=tr("prev")+" "+prev[lang].title.split(":")[0].trim();$("dPrev").onclick=()=>fillDetail(prev.id);
+ $("dNext").textContent=next[lang].title.split(":")[0].trim()+" "+tr("next");$("dNext").onclick=()=>fillDetail(next.id);
+ $("detail").querySelector(".dbody").scrollTop=0;
+}
+function openDetail(id){fillDetail(id);const d=$("detail");if(!d.open)d.showModal();}
+$("dClose").onclick=()=>$("detail").close();
+$("detail").addEventListener("click",e=>{if(e.target===$("detail"))$("detail").close()});
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{domain=b.dataset.domain;skill=null;filter()});
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;try{localStorage.setItem("lang",lang)}catch(e){}renderStatic()});
+
+try{const l=localStorage.getItem("lang");lang=l||((navigator.language||"").toLowerCase().startsWith("fr")?"fr":"en")}catch(e){}
+const root=document.documentElement,tb=$("theme");
+try{const t=localStorage.getItem("theme");if(t)root.dataset.theme=t}catch(e){}
+tb.onclick=()=>{const dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;root.dataset.theme=dark?"light":"dark";try{localStorage.setItem("theme",root.dataset.theme)}catch(e){}};
+renderStatic();
+</script>
+</body>
+</html>
