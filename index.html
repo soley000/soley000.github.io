@@ -332,7 +332,8 @@ const ICON={
  bolt:'<path d="M27 3L9 27h14l-2 18 18-24H25z"/>',
  table:'<rect x="4" y="7" width="40" height="34" rx="3"/><path d="M4 18h40M4 29h40M18 7v34"/>',
  leaf:'<path d="M8 40C8 18 22 7 42 6c0 22-12 34-30 34z"/><path d="M8 40l18-18"/>',
- house:'<path d="M5 22L24 6l19 16"/><path d="M10 18v24h28V18"/><path d="M20 42V30h8v12"/>'
+ house:'<path d="M5 22L24 6l19 16"/><path d="M10 18v24h28V18"/><path d="M20 42V30h8v12"/>',
+ pin:'<path d="M24 44S10 29 10 19a14 14 0 0 1 28 0c0 10-14 25-14 25z"/><circle cx="24" cy="19" r="5"/>'
 };
 
 const T={
@@ -464,6 +465,16 @@ const projects=[
    problem:"La télémétrie brute ne permettait pas de répondre aux questions d'un partenaire de l'énergie sur les usages de recharge.",
    approach:"Évaluation de la qualité, nettoyage et normalisation, jointures SQL entre conduite et recharge pour reconstruire les sessions, puis un indicateur par question métier.",
    result:"Sessions de recharge complètes et vérifiées, indicateurs agrégés et anonymisés, livrés dans le respect strict du RGPD."}},
+ {id:"mf",icon:"pin",stat:"107",domains:["de"],kind:"personal",path:"data-engineering/real-time-mobility-data-platform",
+  skills:["Airflow","dbt","Docker","Parquet","DuckDB","Python","SQL","Data Pipelines","Data Modeling","Data Quality","Data Visualization","Streamlit","Git"],
+  en:{title:"MobilityFlow: Real-Time Mobility Data Platform",statL:"Mobility data platform",desc:"End-to-end pipeline on a real-time bike-sharing feed: collection, Parquet, Airflow, dbt tests, DuckDB and a Streamlit dashboard.",
+   problem:"A bike-sharing feed shows only the current state of each station and keeps no history: an operations team cannot tell which stations lack bikes or docks, or when.",
+   approach:"Collected the feed every minute, converted it to Parquet, built dbt models with data tests in DuckDB, scheduled the chain with Airflow in Docker and presented the answers in a Streamlit dashboard.",
+   result:"107 stations processed by a nightly five-task pipeline; issues in the source feed (unreliable timestamps, capacity mismatches, invalid coordinates) are detected and shown instead of hidden."},
+  fr:{title:"MobilityFlow : plateforme de données de mobilité",statL:"Plateforme de données de mobilité",desc:"Pipeline de bout en bout sur un flux de vélos en libre-service en temps réel : collecte, Parquet, Airflow, tests dbt, DuckDB et tableau de bord Streamlit.",
+   problem:"Un flux de vélos en libre-service n'affiche que l'état actuel de chaque station et ne garde aucun historique : une équipe d'exploitation ne peut pas savoir quelles stations manquent de vélos ou de places, ni à quelle heure.",
+   approach:"Collecte du flux chaque minute, conversion en Parquet, modèles dbt avec tests de données dans DuckDB, planification avec Airflow dans Docker et restitution dans un tableau de bord Streamlit.",
+   result:"107 stations traitées par un pipeline nocturne de cinq tâches ; les anomalies du flux source (horodatages peu fiables, écarts de capacité, coordonnées invalides) sont détectées et affichées plutôt que cachées."}},
  {id:"ida",icon:"table",stat:"Multi",domains:["de"],kind:"industrial",path:"supporting/industrial-data-automation",
   skills:["Data Quality","Data Transformation","Data Pipelines","ETL"],
   en:{title:"Industrial Data Automation",statL:"Data standardization",desc:"Multi-country commercial data panels standardized and automated, with quality checks before database integration.",
