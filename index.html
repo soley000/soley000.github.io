@@ -183,6 +183,9 @@ dialog#detail[open]{animation:slide .28s ease-out}
 .proof li{color:var(--accent);font-weight:500}
 .vig{align-items:flex-end}
 .vig .label{font-family:"Bricolage Grotesque";font-weight:700;font-size:18px;color:var(--accent);text-align:right;max-width:60%;line-height:1.2}
+.dlinks{display:flex;flex-wrap:wrap;gap:10px}
+.dlinks [hidden],.dnote[hidden]{display:none}
+.dnote{color:var(--muted);font-size:14px;margin:10px 0 0}
 .dkind{color:var(--muted);margin:0 0 22px;font-style:italic}
 .xp .where{color:var(--muted);font-size:14px}
 .edu{display:grid;grid-template-columns:220px 1fr;gap:4px 40px;padding:16px 0;border-top:1px solid var(--line)}
@@ -317,7 +320,8 @@ dialog#detail[open]{animation:slide .28s ease-out}
     <div class="dblock"><h3 data-i18n="dl_result"></h3><p id="dResult"></p></div>
     <div class="dblock"><h3 data-i18n="dl_skills"></h3></div>
     <div class="dskills" id="dSkills"></div>
-    <a class="btn primary" id="dLink" data-i18n="dl_read"></a>
+    <div class="dlinks"><a class="btn primary" id="dLink" data-i18n="dl_read"></a><a class="btn ghost" id="dDemo" target="_blank" rel="noopener" data-i18n="dl_demo"></a></div>
+    <p class="dnote" id="dNote" data-i18n="dl_note"></p>
     <div class="dnav"><button id="dPrev"></button><button id="dNext"></button></div>
   </div>
 </dialog>
@@ -333,6 +337,7 @@ const ICON={
  table:'<rect x="4" y="7" width="40" height="34" rx="3"/><path d="M4 18h40M4 29h40M18 7v34"/>',
  leaf:'<path d="M8 40C8 18 22 7 42 6c0 22-12 34-30 34z"/><path d="M8 40l18-18"/>',
  house:'<path d="M5 22L24 6l19 16"/><path d="M10 18v24h28V18"/><path d="M20 42V30h8v12"/>',
+ rank:'<path d="M5 9h5M5 21h5M5 33h5"/><path d="M15 9h27M15 21h13M15 33h7"/><path d="M29 41h16M31 41v-7a6 6 0 0 1 12 0v7M37 25.5v2.5M35 44.5a2 2 0 0 0 4 0"/>',
  pin:'<path d="M24 44S10 29 10 19a14 14 0 0 1 28 0c0 10-14 25-14 25z"/><circle cx="24" cy="19" r="5"/>'
 };
 
@@ -371,7 +376,7 @@ en:{
  ap3:"Build end to end",ap3d:"From data to a usable tool, because a result nobody can use has no value.",
  ap4:"Respect confidentiality",ap4d:"Industrial work is shared through method, architecture and results, never internal code or data.",
  ct_h:"Let's talk",ct_sub:"Data engineering, machine learning, applied AI, or a problem that needs all three.",ct_mail:"Send an email",
- dl_problem:"Problem",dl_approach:"Approach",dl_result:"Result",dl_skills:"Skills",dl_read:"Read the full case study on GitHub",
+ dl_problem:"Problem",dl_approach:"Approach",dl_result:"Result",dl_skills:"Skills",dl_read:"Read the full case study on GitHub",dl_demo:"Open the live demo",dl_note:"First load: about 1 minute.",
  prev:"← Previous",next:"Next →",read:"Details →",industrial:"Industrial",personal:"Open source",
  g_prog:"Programming &amp; Data",g_de:"Data Engineering",g_ml:"Machine Learning",g_cv:"Computer Vision &amp; Multimodal",g_gen:"Generative AI &amp; Evaluation",g_cloud:"Cloud, Apps &amp; Practice",g_other:"Other"
 },
@@ -409,7 +414,7 @@ fr:{
  ap3:"Construire de bout en bout",ap3d:"De la donnée à un outil utilisable, parce qu'un résultat que personne ne peut utiliser n'a pas de valeur.",
  ap4:"Respecter la confidentialité",ap4d:"Les projets industriels sont présentés par leur méthode, leur architecture et leurs résultats, jamais par du code ou des données internes.",
  ct_h:"Échangeons",ct_sub:"Data engineering, machine learning, IA appliquée, ou un problème qui demande les trois.",ct_mail:"Envoyer un e-mail",
- dl_problem:"Problème",dl_approach:"Approche",dl_result:"Résultat",dl_skills:"Compétences",dl_read:"Lire l'étude complète sur GitHub",
+ dl_problem:"Problème",dl_approach:"Approche",dl_result:"Résultat",dl_skills:"Compétences",dl_read:"Lire l'étude complète sur GitHub",dl_demo:"Ouvrir la démo en ligne",dl_note:"Premier chargement : environ 1 minute.",
  prev:"← Précédent",next:"Suivant →",read:"Détails →",industrial:"Industriel",personal:"Open source",
  g_prog:"Programmation &amp; données",g_de:"Data Engineering",g_ml:"Machine Learning",g_cv:"Vision &amp; multimodal",g_gen:"IA générative &amp; évaluation",g_cloud:"Cloud, applis &amp; pratiques",g_other:"Autres"
 }};
@@ -467,14 +472,24 @@ const projects=[
    result:"Sessions de recharge complètes et vérifiées, indicateurs agrégés et anonymisés, livrés dans le respect strict du RGPD."}},
  {id:"mf",icon:"pin",stat:"107",domains:["de"],kind:"personal",path:"data-engineering/real-time-mobility-data-platform",
   skills:["Airflow","dbt","Docker","Parquet","DuckDB","Python","SQL","Data Pipelines","Data Modeling","Data Quality","Data Visualization","Streamlit","Git"],
-  en:{title:"MobilityFlow: Real-Time Mobility Data Platform",statL:"Mobility data platform",desc:"End-to-end pipeline on a real-time bike-sharing feed: collection, Parquet, Airflow, dbt tests, DuckDB and a Streamlit dashboard.",
+  en:{title:"MobilityFlow: Bike-Sharing Station Availability Platform",statL:"Bike-sharing data platform",desc:"End-to-end pipeline on a real-time bike-sharing feed: collection, Parquet, Airflow, dbt tests, DuckDB and a Streamlit dashboard.",
    problem:"A bike-sharing feed shows only the current state of each station and keeps no history: an operations team cannot tell which stations lack bikes or docks, or when.",
    approach:"Collected the feed every minute, converted it to Parquet, built dbt models with data tests in DuckDB, scheduled the chain with Airflow in Docker and presented the answers in a Streamlit dashboard.",
    result:"107 stations processed by a nightly five-task pipeline; issues in the source feed (unreliable timestamps, capacity mismatches, invalid coordinates) are detected and shown instead of hidden."},
-  fr:{title:"MobilityFlow : plateforme de données de mobilité",statL:"Plateforme de données de mobilité",desc:"Pipeline de bout en bout sur un flux de vélos en libre-service en temps réel : collecte, Parquet, Airflow, tests dbt, DuckDB et tableau de bord Streamlit.",
+  fr:{title:"MobilityFlow : disponibilité des stations de vélos en libre-service",statL:"Données de vélos en libre-service",desc:"Pipeline de bout en bout sur un flux de vélos en libre-service en temps réel : collecte, Parquet, Airflow, tests dbt, DuckDB et tableau de bord Streamlit.",
    problem:"Un flux de vélos en libre-service n'affiche que l'état actuel de chaque station et ne garde aucun historique : une équipe d'exploitation ne peut pas savoir quelles stations manquent de vélos ou de places, ni à quelle heure.",
    approach:"Collecte du flux chaque minute, conversion en Parquet, modèles dbt avec tests de données dans DuckDB, planification avec Airflow dans Docker et restitution dans un tableau de bord Streamlit.",
    result:"107 stations traitées par un pipeline nocturne de cinq tâches ; les anomalies du flux source (horodatages peu fiables, écarts de capacité, coordonnées invalides) sont détectées et affichées plutôt que cachées."}},
+ {id:"chargetriage",icon:"rank",stat:"10",domains:["ml"],kind:"personal",path:"ml-mlops/ev-charging-reliability",demo:"https://chargetriage.onrender.com",
+  skills:["Python","scikit-learn","MLflow","FastAPI","Docker","Pandas","MLOps","CI/CD","Monitoring","Model Evaluation","Model Deployment","Git"],
+  en:{title:"ChargeTriage: Daily Inspection Priorities for EV Charging Stations",statL:"Predictive maintenance",desc:"End-to-end machine learning service that ranks charging stations by next-day fault risk: leakage-free features, MLflow tracking and registry, FastAPI, Docker, CI, monitoring and a live demo.",
+   problem:"Charging-station operators discover hardware faults after customers have suffered them, and cannot inspect every station: they need to know each evening which stations to check first the next day.",
+   approach:"Defined an abnormal fault episode relative to each station's own history, built leakage-free daily features from 441,060 charging sessions, compared models with common-sense rules under a decision rule fixed in advance, then tracked and registered the models in MLflow, served the champion through a FastAPI service in Docker, tested it in CI, monitored four months of simulated production and deployed it online.",
+   result:"On the held-out test period, 23.4 % of the 10 stations flagged each evening had an episode the next day, against 16.9 % for the best common-sense rule (+6.5 points). The lead held over four months of simulated production (20.6 % against 13.5 %), and the service is live."},
+  fr:{title:"ChargeTriage : priorités d'inspection des bornes de recharge",statL:"Maintenance prédictive",desc:"Service de machine learning de bout en bout qui classe les bornes de recharge selon leur risque de pannes le lendemain : variables sans fuite, suivi et registre MLflow, FastAPI, Docker, CI, monitoring et démo en ligne.",
+   problem:"Les exploitants de bornes de recharge découvrent les pannes matérielles après les clients et ne peuvent pas tout inspecter : ils doivent savoir chaque soir quelles bornes contrôler en priorité le lendemain.",
+   approach:"Définition d'un épisode anormal de pannes relatif à l'historique de chaque borne, variables quotidiennes sans fuite construites sur 441 060 recharges, comparaison des modèles à des règles de bon sens selon une règle de décision fixée à l'avance, puis suivi et registre des modèles dans MLflow, service du champion par une API FastAPI dans Docker, tests en CI, surveillance de quatre mois de production simulée et mise en ligne.",
+   result:"Sur la période de test, 23,4 % des 10 bornes signalées chaque soir ont eu un épisode le lendemain, contre 16,9 % pour la meilleure règle de bon sens (+6,5 points). L'avance s'est maintenue sur quatre mois de production simulée (20,6 % contre 13,5 %), et le service est en ligne."}},
  {id:"ida",icon:"table",stat:"Multi",domains:["de"],kind:"industrial",path:"supporting/industrial-data-automation",
   skills:["Data Quality","Data Transformation","Data Pipelines","ETL"],
   en:{title:"Industrial Data Automation",statL:"Data standardization",desc:"Multi-country commercial data panels standardized and automated, with quality checks before database integration.",
@@ -528,10 +543,10 @@ const INTERESTS={en:["Reading","Travel","Puzzles","Cultural discovery"],fr:["Lec
 const groups=[
  ["g_prog",["Python","SQL","Pandas","NumPy","PostgreSQL"]],
  ["g_de",["Data Pipelines","ETL","Data Quality","Data Transformation","Data Modeling","Data Anonymization"]],
- ["g_ml",["scikit-learn","Supervised Learning","Feature Engineering","Time Series","Cross-Validation","Model Evaluation","Model Deployment"]],
+ ["g_ml",["scikit-learn","Supervised Learning","Feature Engineering","Time Series","Cross-Validation","Model Evaluation","Model Deployment","MLflow","MLOps","Monitoring"]],
  ["g_cv",["PyTorch","OpenCV","YOLO","DETR","OWL-ViT","Object Detection","Transformers","Vision-Language Models","Video Quality Metrics","Multimodal AI"]],
  ["g_gen",["LLMs","World Models","Prompt Engineering","Hallucination Detection","Benchmarking"]],
- ["g_cloud",["GCP","Docker","FastAPI","Streamlit","Git","Data Visualization","Agile / Scrum"]]
+ ["g_cloud",["GCP","Docker","FastAPI","CI/CD","Streamlit","Git","Data Visualization","Agile / Scrum"]]
 ];
 // any skill cited in a project but missing from the groups is added automatically
 const listed=new Set(groups.flatMap(g=>g[1]));
@@ -579,6 +594,7 @@ function fillDetail(id){
  $("dProblem").textContent=c.problem;$("dApproach").textContent=c.approach;$("dResult").textContent=c.result;
  $("dSkills").innerHTML=p.skills.map(s=>`<span>${s}</span>`).join("");
  $("dLink").href=BASE+p.path;$("dLink").innerHTML=tr("dl_read");
+ $("dDemo").hidden=$("dNote").hidden=!p.demo;if(p.demo)$("dDemo").href=p.demo;
  const prev=projects[(i-1+projects.length)%projects.length],next=projects[(i+1)%projects.length];
  $("dPrev").textContent=tr("prev")+" "+prev[lang].title.split(":")[0].trim();$("dPrev").onclick=()=>fillDetail(prev.id);
  $("dNext").textContent=next[lang].title.split(":")[0].trim()+" "+tr("next");$("dNext").onclick=()=>fillDetail(next.id);
