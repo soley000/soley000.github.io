@@ -376,7 +376,7 @@ en:{
  ap3:"Build end to end",ap3d:"From data to a usable tool, because a result nobody can use has no value.",
  ap4:"Respect confidentiality",ap4d:"Industrial work is shared through method, architecture and results, never internal code or data.",
  ct_h:"Let's talk",ct_sub:"Data engineering, machine learning, applied AI, or a problem that needs all three.",ct_mail:"Send an email",
- dl_problem:"Problem",dl_approach:"Approach",dl_result:"Result",dl_skills:"Skills",dl_read:"Read the full case study on GitHub",dl_demo:"Open the live demo",dl_note:"First load: about 1 minute.",
+ dl_problem:"Problem",dl_approach:"Approach",dl_result:"Result",dl_skills:"Skills",dl_read:"Read the full case study on GitHub",dl_demo:"Open the live demo",dl_note:"First load: about 1 minute.",dl_note_inv:"Dashboard, upload and prediction on invitation. First load: about 1 minute.",
  prev:"← Previous",next:"Next →",read:"Details →",industrial:"Industrial",personal:"Open source",
  g_prog:"Programming &amp; Data",g_de:"Data Engineering",g_ml:"Machine Learning",g_cv:"Computer Vision &amp; Multimodal",g_gen:"Generative AI &amp; Evaluation",g_cloud:"Cloud, Apps &amp; Practice",g_other:"Other"
 },
@@ -414,13 +414,13 @@ fr:{
  ap3:"Construire de bout en bout",ap3d:"De la donnée à un outil utilisable, parce qu'un résultat que personne ne peut utiliser n'a pas de valeur.",
  ap4:"Respecter la confidentialité",ap4d:"Les projets industriels sont présentés par leur méthode, leur architecture et leurs résultats, jamais par du code ou des données internes.",
  ct_h:"Échangeons",ct_sub:"Data engineering, machine learning, IA appliquée, ou un problème qui demande les trois.",ct_mail:"Envoyer un e-mail",
- dl_problem:"Problème",dl_approach:"Approche",dl_result:"Résultat",dl_skills:"Compétences",dl_read:"Lire l'étude complète sur GitHub",dl_demo:"Ouvrir la démo en ligne",dl_note:"Premier chargement : environ 1 minute.",
+ dl_problem:"Problème",dl_approach:"Approche",dl_result:"Résultat",dl_skills:"Compétences",dl_read:"Lire l'étude complète sur GitHub",dl_demo:"Ouvrir la démo en ligne",dl_note:"Premier chargement : environ 1 minute.",dl_note_inv:"Tableau de bord, ajout de runs et prédiction sur invitation. Premier chargement : environ 1 minute.",
  prev:"← Précédent",next:"Suivant →",read:"Détails →",industrial:"Industriel",personal:"Open source",
  g_prog:"Programmation &amp; données",g_de:"Data Engineering",g_ml:"Machine Learning",g_cv:"Vision &amp; multimodal",g_gen:"IA générative &amp; évaluation",g_cloud:"Cloud, applis &amp; pratiques",g_other:"Autres"
 }};
 
 const projects=[
- {id:"wm",icon:"bars",stat:"94.83%",domains:["genai","cv","ml","de"],kind:"industrial",path:"applied-ai-computer-vision/wm-benchmark",
+ {id:"wm",icon:"bars",stat:"94.83%",domains:["genai","cv","ml","de"],kind:"industrial",path:"applied-ai-computer-vision/wm-benchmark",demo:"https://wm-benchmark.onrender.com",demoNote:"dl_note_inv",
   skills:["Python","PostgreSQL","SQL","Data Modeling","Data Pipelines","Docker","FastAPI","scikit-learn","Supervised Learning","Cross-Validation","Model Evaluation","Model Deployment","PyTorch","OpenCV","NumPy","Video Quality Metrics","World Models","Prompt Engineering","Hallucination Detection","Benchmarking","Data Visualization","Agile / Scrum"],
   en:{title:"WM Benchmark",statL:"Evaluation platform",desc:"End-to-end benchmarking platform for generative world models: inference, metrics, database, classifier, web app.",
    problem:"World-model evaluations were run one by one, each with its own scripts, metrics and file format: results could not be compared over time or used to decide.",
@@ -594,7 +594,7 @@ function fillDetail(id){
  $("dProblem").textContent=c.problem;$("dApproach").textContent=c.approach;$("dResult").textContent=c.result;
  $("dSkills").innerHTML=p.skills.map(s=>`<span>${s}</span>`).join("");
  $("dLink").href=BASE+p.path;$("dLink").innerHTML=tr("dl_read");
- $("dDemo").hidden=$("dNote").hidden=!p.demo;if(p.demo)$("dDemo").href=p.demo;
+ $("dDemo").hidden=$("dNote").hidden=!p.demo;if(p.demo){$("dDemo").href=p.demo;$("dNote").innerHTML=tr(p.demoNote||"dl_note");}
  const prev=projects[(i-1+projects.length)%projects.length],next=projects[(i+1)%projects.length];
  $("dPrev").textContent=tr("prev")+" "+prev[lang].title.split(":")[0].trim();$("dPrev").onclick=()=>fillDetail(prev.id);
  $("dNext").textContent=next[lang].title.split(":")[0].trim()+" "+tr("next");$("dNext").onclick=()=>fillDetail(next.id);
