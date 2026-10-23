@@ -338,6 +338,7 @@ const ICON={
  leaf:'<path d="M8 40C8 18 22 7 42 6c0 22-12 34-30 34z"/><path d="M8 40l18-18"/>',
  house:'<path d="M5 22L24 6l19 16"/><path d="M10 18v24h28V18"/><path d="M20 42V30h8v12"/>',
  rank:'<path d="M5 9h5M5 21h5M5 33h5"/><path d="M15 9h27M15 21h13M15 33h7"/><path d="M29 41h16M31 41v-7a6 6 0 0 1 12 0v7M37 25.5v2.5M35 44.5a2 2 0 0 0 4 0"/>',
+ chat:'<path d="M6 10a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H20l-9 8v-8h-1a4 4 0 0 1-4-4z"/><path d="M26 11l-7 10h6l-2 9 8-11h-6z"/>',
  pin:'<path d="M24 44S10 29 10 19a14 14 0 0 1 28 0c0 10-14 25-14 25z"/><circle cx="24" cy="19" r="5"/>'
 };
 
@@ -490,6 +491,16 @@ const projects=[
    problem:"Les exploitants de bornes de recharge découvrent les pannes matérielles après les clients et ne peuvent pas tout inspecter : ils doivent savoir chaque soir quelles bornes contrôler en priorité le lendemain.",
    approach:"Définition d'un épisode anormal de pannes relatif à l'historique de chaque borne, variables quotidiennes sans fuite construites sur 441 060 recharges, comparaison des modèles à des règles de bon sens selon une règle de décision fixée à l'avance, puis suivi et registre des modèles dans MLflow, service du champion par une API FastAPI dans Docker, tests en CI, surveillance de quatre mois de production simulée et mise en ligne.",
    result:"Sur la période de test, 23,4 % des 10 bornes signalées chaque soir ont eu un épisode le lendemain, contre 16,9 % pour la meilleure règle de bon sens (+6,5 points). L'avance s'est maintenue sur quatre mois de production simulée (20,6 % contre 13,5 %), et le service est en ligne."}},
+ {id:"chargedesk",icon:"chat",stat:"95",domains:["genai"],kind:"personal",path:"genai-llm/chargedesk",demo:"https://chargedesk.onrender.com",
+  skills:["Python","LLMs","AI Agents","Tool Calling","LLM Evaluation","Pydantic","DuckDB","dbt","FastAPI","Docker","CI/CD","Monitoring"],
+  en:{title:"ChargeDesk: an Evening Assistant for EV Charging Operators",statL:"Operator assistant",desc:"LLM agent that answers an EV charging operator's evening questions with controlled tools over a dbt warehouse: sourced figures, honest refusals, clarification requests, a frozen evaluation set, FastAPI, Docker, CI, monitoring and a live demo.",
+   problem:"Each evening, operators receive a ranked list of stations to inspect, but cannot tell why a station is on it, cannot see alerts outside the list, and cannot check the figures without writing SQL.",
+   approach:"Built a leakage-free evening snapshot of the data with dbt and DuckDB, gave an LLM 12 typed tools with guardrails instead of free SQL, froze 62 questions with expected answers before writing the agent, compared it with two baselines under a decision rule fixed in advance, then served it through a FastAPI page in Docker with prepared answers, a fallback provider and monitoring.",
+   result:"On the held-out test set, 95 % of answers were correct against 84 % for the same LLM writing its own SQL, with 100 % on questions requiring figures and no unsupported figure. The gain is not statistically established on 31 questions and the agent asked for clarification too rarely: both are documented. The service is live."},
+  fr:{title:"ChargeDesk : l'assistant du soir des exploitants de bornes de recharge",statL:"Assistant de l'exploitant",desc:"Agent LLM qui répond aux questions du soir d'un exploitant de bornes de recharge, avec des outils contrôlés sur un entrepôt dbt : chiffres sourcés, refus honnêtes, demandes de précision, jeu d'évaluation figé, FastAPI, Docker, CI, surveillance et démo en ligne.",
+   problem:"Chaque soir, l'exploitant reçoit la liste des bornes à inspecter, sans savoir pourquoi une borne y figure, sans voir les alertes hors liste, et sans pouvoir vérifier les chiffres sans écrire de SQL.",
+   approach:"Vue des données « au soir courant », sans fuite, construite avec dbt et DuckDB ; 12 outils typés avec garde-fous plutôt qu'un SQL libre ; 62 questions figées avec leurs réponses avant d'écrire l'agent ; comparaison à deux références selon une règle de décision fixée à l'avance ; puis une page FastAPI dans Docker, avec réponses préparées, fournisseur de repli et surveillance.",
+   result:"Sur le jeu de test, 95 % de réponses justes contre 84 % pour le même LLM qui écrit son SQL, 100 % sur les questions chiffrées et aucun chiffre non étayé. Le gain n'est pas prouvé statistiquement sur 31 questions et l'agent demande trop rarement une précision : les deux sont documentés. Le service est en ligne."}},
  {id:"ida",icon:"table",stat:"Multi",domains:["de"],kind:"industrial",path:"supporting/industrial-data-automation",
   skills:["Data Quality","Data Transformation","Data Pipelines","ETL"],
   en:{title:"Industrial Data Automation",statL:"Data standardization",desc:"Multi-country commercial data panels standardized and automated, with quality checks before database integration.",
@@ -541,11 +552,11 @@ const EDU=[
 const INTERESTS={en:["Reading","Travel","Puzzles","Cultural discovery"],fr:["Lecture","Voyages","Puzzles","Découvertes culturelles"]};
 
 const groups=[
- ["g_prog",["Python","SQL","Pandas","NumPy","PostgreSQL"]],
- ["g_de",["Data Pipelines","ETL","Data Quality","Data Transformation","Data Modeling","Data Anonymization"]],
+ ["g_prog",["Python","SQL","Pandas","NumPy","PostgreSQL","Pydantic"]],
+ ["g_de",["Data Pipelines","ETL","Data Quality","Data Transformation","Data Modeling","Data Anonymization","dbt","DuckDB"]],
  ["g_ml",["scikit-learn","Supervised Learning","Feature Engineering","Time Series","Cross-Validation","Model Evaluation","Model Deployment","MLflow","MLOps","Monitoring"]],
  ["g_cv",["PyTorch","OpenCV","YOLO","DETR","OWL-ViT","Object Detection","Transformers","Vision-Language Models","Video Quality Metrics","Multimodal AI"]],
- ["g_gen",["LLMs","World Models","Prompt Engineering","Hallucination Detection","Benchmarking"]],
+ ["g_gen",["LLMs","AI Agents","Tool Calling","LLM Evaluation","World Models","Prompt Engineering","Hallucination Detection","Benchmarking"]],
  ["g_cloud",["GCP","Docker","FastAPI","CI/CD","Streamlit","Git","Data Visualization","Agile / Scrum"]]
 ];
 // any skill cited in a project but missing from the groups is added automatically
