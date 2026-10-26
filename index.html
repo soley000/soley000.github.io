@@ -339,7 +339,7 @@ const ICON={
  house:'<path d="M5 22L24 6l19 16"/><path d="M10 18v24h28V18"/><path d="M20 42V30h8v12"/>',
  rank:'<path d="M5 9h5M5 21h5M5 33h5"/><path d="M15 9h27M15 21h13M15 33h7"/><path d="M29 41h16M31 41v-7a6 6 0 0 1 12 0v7M37 25.5v2.5M35 44.5a2 2 0 0 0 4 0"/>',
  chat:'<path d="M6 10a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H20l-9 8v-8h-1a4 4 0 0 1-4-4z"/><path d="M26 11l-7 10h6l-2 9 8-11h-6z"/>',
- pin:'<path d="M24 44S10 29 10 19a14 14 0 0 1 28 0c0 10-14 25-14 25z"/><circle cx="24" cy="19" r="5"/>'
+ bike:'<circle cx="11" cy="31" r="7"/><circle cx="37" cy="31" r="7"/><path d="M11 31L19 17h13M19 17l5 14h-13M24 31L32 17M32 17l5 14M29 11h5l-2 6M16 13h7"/>'
 };
 
 const T={
@@ -471,18 +471,18 @@ const projects=[
    problem:"La télémétrie brute ne permettait pas de répondre aux questions d'un partenaire de l'énergie sur les usages de recharge.",
    approach:"Évaluation de la qualité, nettoyage et normalisation, jointures SQL entre conduite et recharge pour reconstruire les sessions, puis un indicateur par question métier.",
    result:"Sessions de recharge complètes et vérifiées, indicateurs agrégés et anonymisés, livrés dans le respect strict du RGPD."}},
- {id:"mf",icon:"pin",stat:"2.7M",domains:["de"],kind:"personal",path:"data-engineering/real-time-mobility-data-platform",demo:"https://mobilityflow-nantes.streamlit.app",
-  skills:["Airflow","dbt","Docker","Parquet","DuckDB","Python","SQL","Data Pipelines","Data Modeling","Data Quality","Data Visualization","Streamlit","Git"],
-  en:{title:"MobilityFlow: Bike-Sharing Station Availability Platform",statL:"Station measurements",desc:"End-to-end data platform on a real-time bike-sharing feed: collection, Parquet, Airflow, dbt tests, DuckDB and a public Streamlit dashboard.",
+ {id:"mf",icon:"bike",stat:"2.7M",domains:["de"],kind:"personal",path:"data-engineering/real-time-mobility-data-platform",demo:"https://mobilityflow-nantes.streamlit.app",
+  skills:["Airflow","dbt","Docker","Parquet","DuckDB","Python","SQL","Data Pipelines","Data Modeling","Data Quality","Data Visualization","Streamlit","CI/CD","Monitoring","Git"],
+  en:{title:"MobilityFlow: Bike-Sharing Station Availability Platform",statL:"Bike-sharing data platform",desc:"End-to-end data platform on a real-time bike-sharing feed: collection, Parquet, Airflow, dbt tests, DuckDB and a public Streamlit dashboard.",
    problem:"A bike-sharing feed shows only the current state of each station and keeps no history: an operations team cannot tell which stations lack bikes or docks, or when.",
    approach:"Collected the feed every minute for 17 days, converted it to Parquet, built dbt models with data tests in DuckDB, scheduled the chain with Airflow in Docker, checked every change with automated tests and published the findings in a Streamlit dashboard.",
    result:"2.67 million station measurements from 121 listed stations (from 102 to 68 in service per minute over the period) processed by a nightly five-task pipeline. The dashboard shows where and when bikes or docks are missing, and makes the source's data issues (unreliable timestamps, capacity mismatches, invalid coordinates, collection gaps) visible instead of hidden."},
-  fr:{title:"MobilityFlow : disponibilité des stations de vélos en libre-service",statL:"Mesures de stations",desc:"Plateforme de données de bout en bout sur un flux de vélos en libre-service en temps réel : collecte, Parquet, Airflow, tests dbt, DuckDB et tableau de bord Streamlit public.",
+  fr:{title:"MobilityFlow : disponibilité des stations de vélos en libre-service",statL:"Données de vélos en libre-service",desc:"Plateforme de données de bout en bout sur un flux de vélos en libre-service en temps réel : collecte, Parquet, Airflow, tests dbt, DuckDB et tableau de bord Streamlit public.",
    problem:"Un flux de vélos en libre-service n'affiche que l'état actuel de chaque station et ne garde aucun historique : une équipe d'exploitation ne peut pas savoir quelles stations manquent de vélos ou de places, ni à quelle heure.",
    approach:"Collecte du flux chaque minute pendant 17 jours, conversion en Parquet, modèles dbt avec tests de données dans DuckDB, planification avec Airflow dans Docker, contrôle de chaque modification par des tests automatiques et publication des résultats dans un tableau de bord Streamlit.",
    result:"2,67 millions de mesures sur 121 stations listées (de 102 à 68 en service par minute) traitées par un pipeline nocturne de cinq tâches. Le tableau de bord montre où et quand les vélos ou les places manquent, et rend visibles les anomalies du flux source (horodatages peu fiables, écarts de capacité, coordonnées invalides, trous de collecte) au lieu de les cacher."}},
  {id:"chargetriage",icon:"rank",stat:"10",domains:["ml"],kind:"personal",path:"ml-mlops/ev-charging-reliability",demo:"https://chargetriage.onrender.com",
-  skills:["Python","scikit-learn","MLflow","FastAPI","Docker","Pandas","MLOps","CI/CD","Monitoring","Model Evaluation","Model Deployment","Git"],
+  skills:["Python","scikit-learn","MLflow","FastAPI","Docker","Pandas","MLOps","CI/CD","Monitoring","Feature Engineering","Supervised Learning","Model Evaluation","Model Deployment","Git"],
   en:{title:"ChargeTriage: Daily Inspection Priorities for EV Charging Stations",statL:"Predictive maintenance",desc:"End-to-end machine learning service that ranks charging stations by next-day fault risk: leakage-free features, MLflow tracking and registry, FastAPI, Docker, CI, monitoring and a live demo.",
    problem:"Charging-station operators discover hardware faults after customers have suffered them, and cannot inspect every station: they need to know each evening which stations to check first the next day.",
    approach:"Defined an abnormal fault episode relative to each station's own history, built leakage-free daily features from 441,060 charging sessions, compared models with common-sense rules under a decision rule fixed in advance, then tracked and registered the models in MLflow, served the champion through a FastAPI service in Docker, tested it in CI, monitored four months of simulated production and deployed it online.",
